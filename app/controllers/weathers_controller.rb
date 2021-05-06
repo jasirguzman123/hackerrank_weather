@@ -1,8 +1,6 @@
 class WeathersController < ApplicationController
   def create
-    weather = Weather.create!(creation_params)
-    byebug
-    render json: weather.to_json, status: :ok
+    @weather = Weather.create!(creation_params)
   rescue
     head :bad_request
   end
