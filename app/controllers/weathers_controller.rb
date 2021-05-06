@@ -1,5 +1,6 @@
 class WeathersController < ApplicationController
   def create
+    @weather = Weather.create!(creation_params)
     render json: { data: 'dasda' }
   rescue
     head :bad_request
