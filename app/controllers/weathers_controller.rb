@@ -1,22 +1,7 @@
 class WeathersController < ApplicationController
   def create
     @weather = Weather.create!(creation_params)
-    render json: {
-   "id": 1,
-   "date": "1985-01-01",
-   "location": {
-       "lat": 35.1442,
-       "lon": -111.6664,
-       "city": "Flagstaff",
-       "state": "Arizona"
-   },
-   "temperature": [
-      28.5, 27.6, 26.7, 25.9, 25.3, 24.7,
-      24.3, 24.0, 27.1, 34.0, 38.6, 41.3,
-      43.2, 44.4, 45.0, 45.3, 45.1, 44.2,
-      41.9, 38.0, 35.0, 33.0, 31.1, 29.9
-   ]
-}
+    render json: { data: 'dasda' }
   rescue
     head :bad_request
   end
