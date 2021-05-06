@@ -1,13 +1,13 @@
 class WeathersController < ApplicationController
   def create
     weather = Weather.create!(creation_params)
-    head :created
+    render json: weather, status: :ok
   rescue
     head :bad_request
   end
 
   def index
-    
+
   end
 
   def erase
