@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resource :weather, only: %i[create index]
-  delete :erase, to: 'weathers#erase'
+  constraints format: :json do
+    post :weather, to: 'weathers#create'
+    get :weather, to: 'weathers#index'
+    delete :erase, to: 'weathers#erase'
+  end
 end

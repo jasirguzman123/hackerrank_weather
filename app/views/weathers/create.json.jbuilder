@@ -1,1 +1,1 @@
-json.extract! @weather
+json.partial! @weather, as: :weather
